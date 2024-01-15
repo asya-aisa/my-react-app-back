@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FileController = void 0;
 const common_1 = require("@nestjs/common");
 const platform_express_1 = require("@nestjs/platform-express");
+const auth_decorator_1 = require("../auth/decorators/auth.decorator");
 const file_service_1 = require("./file.service");
 let FileController = class FileController {
     constructor(fileService) {
@@ -28,6 +29,7 @@ exports.FileController = FileController;
 __decorate([
     (0, common_1.Post)(),
     (0, common_1.HttpCode)(200),
+    (0, auth_decorator_1.Auth)('admin'),
     (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)('file')),
     __param(0, (0, common_1.UploadedFile)()),
     __param(1, (0, common_1.Query)('folder')),

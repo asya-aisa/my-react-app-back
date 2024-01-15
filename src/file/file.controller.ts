@@ -16,7 +16,7 @@ export class FileController {
 
 	@Post()
 	@HttpCode(200)
-	// @Auth('admin')
+	@Auth('admin')
 	@UseInterceptors(FileInterceptor('file'))
 	async uploadFile(
 		@UploadedFile() file: Express.Multer.File,
