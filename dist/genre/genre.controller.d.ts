@@ -31,9 +31,7 @@ export declare class GenreController {
     bySlug(slug: string): Promise<import("mongoose").Document<unknown, import("@typegoose/typegoose/lib/types").BeAnObject, import("./genre.model").GenreModel> & Omit<import("./genre.model").GenreModel & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>, "typegooseName"> & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction>;
-    getCollections(): Promise<(import("mongoose").Document<unknown, import("@typegoose/typegoose/lib/types").BeAnObject, import("./genre.model").GenreModel> & Omit<import("./genre.model").GenreModel & Required<{
-        _id: import("mongoose").Types.ObjectId;
-    }>, "typegooseName"> & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction)[]>;
+    getCollections(): Promise<import("./genre.interface").ICollection[]>;
     getAll(searchTerm?: string): Promise<(import("mongoose").Document<unknown, import("@typegoose/typegoose/lib/types").BeAnObject, import("./genre.model").GenreModel> & Omit<import("./genre.model").GenreModel & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>, "typegooseName"> & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction)[]>;

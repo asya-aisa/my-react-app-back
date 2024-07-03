@@ -26,6 +26,7 @@
 import { ModelType } from '@typegoose/typegoose/lib/types';
 import { MovieService } from 'src/movie/movie.service';
 import { CreateGenreDto } from './dto/create-genre.dto';
+import { ICollection } from './genre.interface';
 import { GenreModel } from './genre.model';
 export declare class GenreService {
     private readonly GenreModel;
@@ -37,9 +38,7 @@ export declare class GenreService {
     getAll(searchTerm?: string): Promise<(import("mongoose").Document<unknown, import("@typegoose/typegoose/lib/types").BeAnObject, GenreModel> & Omit<GenreModel & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>, "typegooseName"> & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction)[]>;
-    getCollections(): Promise<(import("mongoose").Document<unknown, import("@typegoose/typegoose/lib/types").BeAnObject, GenreModel> & Omit<GenreModel & Required<{
-        _id: import("mongoose").Types.ObjectId;
-    }>, "typegooseName"> & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction)[]>;
+    getCollections(): Promise<ICollection[]>;
     create(): Promise<import("mongoose").Types.ObjectId>;
     byId(_id: string): Promise<import("mongoose").Document<unknown, import("@typegoose/typegoose/lib/types").BeAnObject, GenreModel> & Omit<GenreModel & Required<{
         _id: import("mongoose").Types.ObjectId;
